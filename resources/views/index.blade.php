@@ -11,8 +11,8 @@
         <div class="container p-5">
             <div class="row g-2 align-items-center justify-content-center">
                 <div class="col-md-12 col-lg-7">
-                    <h4 class="mb-3 text-secondary">100% Organic Foods</h4>
-                    <h1 class="mb-5 display-3 text-primary">Organic Veggies & Fruits Foods</h1>
+                    <h3 class="mb-3 text-secondary">100% Organik Tanpa Kimia</h3>
+                    <h1 class="mb-5 display-3 text-primary">Toko Buah & Sayur Organik</h1>
                 </div>
                 <div class="col-md-12 col-lg-5">
                     <div id="carouselExampleIndicators" class="carousel slide">
@@ -79,7 +79,7 @@
     <div class="container-fluid featurs bg-secondary">
         <div class="container p-5">
             <div class="text-center mx-auto mb-5" style="max-width: 700px;">
-                <h1 class="display-6 text-white">Keunggulan Kami</h1>
+                <h1 class="display-6 text-white">Mengapa Harus Belanja di Kami?</h1>
             </div>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3">
@@ -88,41 +88,41 @@
                             <i class="fas fa-car-side fa-3x text-white"></i>
                         </div>
                         <div class="featurs-content text-center">
-                            <h5>Free Shipping</h5>
-                            <p class="mb-0">Free on order over $300</p>
+                            <h5>Gratis Ongkir</h5>
+                            <p class="mb-0">Gratis biaya pengiriman area Malang</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="featurs-item text-center rounded bg-light p-4">
                         <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
-                            <i class="fas fa-user-shield fa-3x text-white"></i>
+                            <i class="fas fa-money-bill-wave fa-3x text-white"></i>
                         </div>
                         <div class="featurs-content text-center">
-                            <h5>Security Payment</h5>
-                            <p class="mb-0">100% security payment</p>
+                            <h5>Pembayaran COD</h5>
+                            <p class="mb-0">Sistem pembayaran COD dijamin aman</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="featurs-item text-center rounded bg-light p-4">
                         <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
-                            <i class="fas fa-exchange-alt fa-3x text-white"></i>
+                            <i class="fas fa-leaf fa-3x text-white"></i>
                         </div>
                         <div class="featurs-content text-center">
-                            <h5>30 Day Return</h5>
-                            <p class="mb-0">30 day money guarantee</p>
+                            <h5>Organik</h5>
+                            <p class="mb-0">Produk kami dijamin 100% organik</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="featurs-item text-center rounded bg-light p-4">
                         <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
-                            <i class="fa fa-phone-alt fa-3x text-white"></i>
+                            <i class="fas fa-seedling fa-3x text-white"></i>
                         </div>
                         <div class="featurs-content text-center">
-                            <h5>24/7 Support</h5>
-                            <p class="mb-0">Support every time fast</p>
+                            <h5>Fresh</h5>
+                            <p class="mb-0">Produk kami selalu fresh hasil panen hari yang sama</p>
                         </div>
                     </div>
                 </div>

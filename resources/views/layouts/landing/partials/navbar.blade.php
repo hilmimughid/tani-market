@@ -9,8 +9,9 @@
         <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
             <div class="navbar-nav mx-auto">
                 <a href="{{ route('/') }}" class="nav-item nav-link">Home</a>
-                <a href="shop-detail.html" class="nav-item nav-link">Tentang Kami</a>
-                <a href="contact.html" class="nav-item nav-link">Kontak</a>
+                <a href="#kontak" class="nav-item nav-link">Kontak</a>
+                <a href="#lokasi" class="nav-item nav-link">Lokasi</a>
+                <a href="#tentangKami" class="nav-item nav-link">Tentang Kami</a>
             </div>
             <div class="d-flex m-3 me-0">
                 @if (Auth::check() && Auth::user()->role == 'Admin')
