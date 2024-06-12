@@ -155,6 +155,12 @@
         transition: .5s;
         opacity: 0;
     }
+
+    .maps {
+        border: 0;
+        width: 400;
+        height: 200;
+    }
 }
 
 .dropdown .dropdown-menu a:hover {
@@ -232,6 +238,12 @@
     .page-header {
         margin-top: 20px !important;
     }
+
+    .maps {
+        border: 0;
+        width: 400;
+        height: 200;
+    }
 }
 
 @media (max-width: 992px) {
@@ -239,6 +251,12 @@
     .hero-header,
     .page-header {
         margin-top: 20px !important;
+    }
+
+    .maps {
+        border: 0;
+        width: 300;
+        height: 100;
     }
 }
 
