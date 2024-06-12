@@ -30,7 +30,7 @@
                         <label for="role" class="form-label">Role</label>
                         <select class="form-select" name="role" required>
                             <option selected>Pilih Role</option>
-                            <option value="User">User</option>
+                            <option value="Customer">Customer</option>
                             <option value="Admin">Admin</option>
                         </select>
                     </div>

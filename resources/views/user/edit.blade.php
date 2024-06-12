@@ -30,7 +30,7 @@
                     <div class="col mb-4">
                         <label for="role" class="form-label">Role</label>
                         @php
-                            $opsi_role = ['User', 'Admin'];
+                            $opsi_role = ['Customer', 'Admin'];
                             $role_dipilih = $user->role;
                             $sisa_role = array_diff($opsi_role, [$role_dipilih]);
                         @endphp

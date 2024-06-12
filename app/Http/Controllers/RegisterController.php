@@ -18,27 +18,19 @@ class RegisterController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
         try {
-            $request->merge(['role' => 'User']);
+            $request->merge(['role' => 'Customer']);
 
             $validated = $request->validate([
                 'nama' => 'required|string|max:255',
                 'email' => 'required|string|email|max:255|unique:users',
                 'password' => 'required|string|min:8',
                 'no_hp' => 'required|string|max:15',
-                'role' => 'required|in:User,Admin',
+                'role' => 'required|in:Customer,Admin',
             ]);
 
             $validated['password'] = bcrypt($validated['password']);
@@ -49,40 +41,5 @@ class RegisterController extends Controller
         } catch (\Exception $e) {
             return back()->with('error', 'Terjadi kesalahan saat mendaftar: ' . $e->getMessage());
         }
-    }
-
-
-
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 }

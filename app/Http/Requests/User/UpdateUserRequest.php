@@ -26,7 +26,7 @@ class UpdateUserRequest extends FormRequest
             'email' => 'required|string|email|max:255',
             'password' => 'required|string|min:8',
             'no_hp' => 'required|string|max:15',
-            'role' => 'required|in:User,Admin',
+            'role' => 'required|in:Customer,Admin',
         ];
     }
 }

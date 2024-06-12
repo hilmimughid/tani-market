@@ -43,7 +43,7 @@ class UserController extends Controller
             User::create($request->validated());
             return redirect()->route('user.index');
         } catch (\Exception $e) {
-            return back()->with('error', 'Terjadi kesalahan saat menyimpan produk: ' . $e->getMessage());
+            return back()->with('error', 'Terjadi kesalahan saat menyimpan user: ' . $e->getMessage());
         }
     }
 
@@ -80,7 +80,7 @@ class UserController extends Controller
             $user->update($data);
             return redirect()->route('user.index');
         } catch (\Exception $e) {
-            return back()->with('error', 'Terjadi kesalahan saat mengupdate produk: ' . $e->getMessage());
+            return back()->with('error', 'Terjadi kesalahan saat mengupdate user: ' . $e->getMessage());
         }
     }
 
