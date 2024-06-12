@@ -22,13 +22,19 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/detail-produk', [HomeController::class, 'produkDetail'])->name('produk.detail');
 Route::resource('/register', RegisterController::class);
-Route::resource('/login', LoginController::class);
-Route::resource('/dashboard', DashboardController::class);
-Route::resource('/kategori-produk', KategoriProdukController::class);
-Route::resource('/produk', ProdukController::class);
-Route::resource('/pesanan', PesananController::class);
-Route::resource('/slideshow', SlideshowController::class);
-Route::resource('/user', UserController::class);
+Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+Route::post('/login-auth', [LoginController::class, 'login'])->name('login.auth');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/', [HomeController::class, 'index'])->name('/');
+Route::get('/produk-detail', [HomeController::class, 'produkDetail'])->name('produk.detail');
+
+Route::group(['middleware' => ['role:Admin']], function () {
+    Route::resource('/dashboard', DashboardController::class);
+    Route::resource('/kategori-produk', KategoriProdukController::class);
+    Route::resource('/produk', ProdukController::class);
+    Route::resource('/pesanan', PesananController::class);
+    Route::resource('/slideshow', SlideshowController::class);
+    Route::resource('/user', UserController::class);
+});
