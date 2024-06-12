@@ -14,20 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
-            'nama' => 'Admin',
-            'email' => 'admin@admin.com',
-            'password' => Hash::make('123456789'),
-            'no_hp' => '123123123123',
-            'role' => 'Admin',
-        ]);
-
-        User::create([
-            'nama' => 'Customer',
-            'email' => 'customer@customer.com',
-            'password' => Hash::make('123456789'),
-            'no_hp' => '123123',
-            'role' => 'Customer',
-        ]);
+        $this->call([UserSeeder::class]);
+        $this->call([KategoriProdukSeeder::class]);
     }
 }
