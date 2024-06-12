@@ -20,10 +20,4 @@ class HomeController extends Controller
             ->get();
         return view('index', compact('produks', 'slideshows'));
     }
-
-
-    public function produkDetail()
-    {
-        return view('produk.detail');
-    }
 }
