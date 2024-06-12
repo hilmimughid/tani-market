@@ -1,7 +1,7 @@
             <!-- Sidebar scroll-->
             <div>
                 <div class="brand-logo d-flex align-items-center justify-content-between">
-                    <a href="{{ route('home') }}" class="text-nowrap logo-img text-center">
+                    <a href="{{ route('/') }}" class="text-nowrap logo-img text-center">
                         <img src="{{ asset('images/logo.png') }}" width="120" alt="" /><br>
                         <h1>Tani Market</h1>
                     </a>
