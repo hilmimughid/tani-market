@@ -2,7 +2,7 @@
 @section('title', 'Tani Market')
 @section('content')
     <div class="container">
-        <form action="{{ route('home') }}" method="GET" class="d-flex mb-3">
+        <form action="{{ route('/') }}" method="GET" class="d-flex mt-1 mb-3">
             <input type="text" name="search" class="form-control me-2" placeholder="Cari">
             <button type="submit" class="btn btn-outline-primary"><i class="fas fa-search"></i></button>
         </form>
