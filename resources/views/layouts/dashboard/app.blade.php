@@ -7,7 +7,11 @@
     <title>
         @yield('title')
     </title>
+
+    {{-- Favicon --}}
     <link rel="shortcut icon" type="image/png" href="{{ asset('images/logo.png') }}" />
+
+    {{-- Main CSS --}}
     <link rel="stylesheet" href="{{ asset('templates/modernize/css/styles.min.css') }}" />
 </head>
 
@@ -46,11 +50,6 @@
     <script src="{{ asset('templates/modernize/js/app.min.js') }}"></script>
     <script src="{{ asset('templates/modernize/libs/simplebar/dist/simplebar.js') }}"></script>
     <script src="{{ asset('templates/modernize/js/dashboard.js') }}"></script>
-
-    {{-- Sweetalert JS --}}
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    {{-- <script src="{{ asset('js/custom-sweetalert.js') }}"></script> --}}
-
     @stack('scripts')
 </body>
 

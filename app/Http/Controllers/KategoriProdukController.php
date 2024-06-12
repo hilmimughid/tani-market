@@ -42,9 +42,9 @@ class KategoriProdukController extends Controller
     {
         try {
             KategoriProduk::create($request->validated());
-            return response()->json(['status' => 'success', 'message' => 'Kategori produk berhasil ditambahkan!']);
+            return redirect()->route('kategori-produk.index');
         } catch (\Exception $e) {
-            return response()->json(['status' => 'error', 'message' => 'Gagal menambahkan kategori produk!']);
+            return back()->with('error', 'Terjadi kesalahan saat menambahkan kategori produk: ' . $e->getMessage());
         }
     }
 
@@ -72,9 +72,9 @@ class KategoriProdukController extends Controller
     {
         try {
             $kategori_produk->update($request->validated());
-            return response()->json(['status' => 'success', 'message' => 'Kategori produk berhasil diperbarui!']);
+            return redirect()->route('kategori-produk.index');
         } catch (\Exception $e) {
-            return response()->json(['status' => 'error', 'message' => 'Gagal memperbarui kategori produk!']);
+            return back()->with('error', 'Terjadi kesalahan saat memperbarui kategori produk: ' . $e->getMessage());
         }
     }
 
@@ -86,9 +86,9 @@ class KategoriProdukController extends Controller
         try {
             $kategori_produk = KategoriProduk::where('id', $id)->first();
             $kategori_produk->delete();
-            return response()->json(['status' => 'success', 'message' => 'Kategori produk berhasil dihapus!']);
+            return redirect()->route('kategori-produk.index');
         } catch (\Exception $e) {
-            return response()->json(['status' => 'error', 'message' => 'Kategori produk tidak bisa dihapus karena sedang digunakan!']);
+            return back()->with('error', 'Terjadi kesalahan saat menghapus kategori produk: ' . $e->getMessage());
         }
     }
 }

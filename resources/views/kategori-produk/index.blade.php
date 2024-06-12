@@ -59,8 +59,4 @@
     </div>
 
     @include('kategori-produk.modal')
-
-    @push('scripts')
-        <script src="{{ asset('js/custom-sweetalert.js') }}"></script>
-    @endpush
 @endsection
