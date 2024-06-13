@@ -18,7 +18,7 @@ class ProdukController extends Controller
     {
         $search = $request->get('search');
         $kategori_produks = KategoriProduk::all();
-        $produks = Produk::with('KategoriProduk')
+        $produks = Produk::with('kategoriProduk')
             ->join('kategori_produk', 'produk.kategori_id', '=', 'kategori_produk.id')
             ->where('produk.nama', 'like', '%' . $search . '%')
             ->orWhere('kategori_produk.nama', 'like', '%' . $search . '%')

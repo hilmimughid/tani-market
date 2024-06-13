@@ -31,7 +31,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $produk->nama }}</td>
                                 <td><img src="{{ asset('uploads/' . $produk->gambar) }}" width="100px" height="100px"></td>
-                                <td>{{ $produk->KategoriProduk->nama }}</td>
+                                <td>{{ $produk->kategoriProduk->nama }}</td>
                                 <td>{{ $produk->stok }}</td>
                                 <td>{{ $produk->harga }}</td>
                                 <td>{{ $produk->deskripsi }}</td>

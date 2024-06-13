@@ -18,7 +18,7 @@
                         <div class="col-lg-6">
                             <h1 class="fw-bold mb-3">{{ $produk->nama }}</h1>
                             <h5 class="fw-bold mb-3">Rp.{{ $produk->harga }} per kg</h5>
-                            <p class="mb-3">Kategori: {{ $produk->KategoriProduk->nama }}</p>
+                            <p class="mb-3">Kategori: {{ $produk->kategoriProduk->nama }}</p>
                             <p class="mb-3">Stok: {{ $produk->stok }} kg</p>
                             <a href="#"
                                 class="btn border border-secondary rounded px-4 py-2 mb-4 text-primary">Beli</a>
