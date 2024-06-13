@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeliController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\DashboardController;
@@ -30,6 +31,11 @@ Route::resource('/register', RegisterController::class);
 Route::get('/login', [LoginController::class, 'index'])->name('login.index');
 Route::post('/login-auth', [LoginController::class, 'login'])->name('login.auth');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::group(['middleware' => 'role:Customer,Admin'], function () {
+    Route::get('/beli/{id}', [BeliController::class, 'create'])->name('beli.create');
+    Route::post('/beli', [BeliController::class, 'store'])->name('beli.store');
+});
 
 Route::group(['middleware' => ['role:Admin']], function () {
     Route::resource('/dashboard', DashboardController::class);

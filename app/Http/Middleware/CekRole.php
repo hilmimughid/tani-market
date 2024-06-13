@@ -8,16 +8,18 @@ use Illuminate\Support\Facades\Auth;
 
 class CekRole
 {
-    public function handle(Request $request, Closure $next, $role)
+    public function handle(Request $request, Closure $next, ...$roles)
     {
         if (!Auth::check()) {
             return redirect('/login');
         }
 
-        if (Auth::user()->role != $role) {
-            return redirect('/');
+        foreach ($roles as $role) {
+            if (Auth::user()->role == $role) {
+                return $next($request);
+            }
         }
 
-        return $next($request);
+        return redirect('/');
     }
 }
