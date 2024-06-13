@@ -22,7 +22,7 @@
         </div>
         <div class="col-lg-4 col-md-8">
             <div class="d-flex flex-column text-start footer-item">
-                <h4 class="text-light mb-3" id="kontak">Hubungi Kami</h4>
+                <h4 class="text-light mb-3" id="kontak">Kontak Kami</h4>
                 <a class="btn-link text-white d-flex align-items-center mb-2" href="https://wa.me/87859198577">
                     <i class="text-primary fab fa-whatsapp fa-2x pe-3"></i>087859198577
                 </a>
