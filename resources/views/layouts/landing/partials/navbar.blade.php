@@ -24,6 +24,7 @@
                 @if (Auth::check())
                     <a href="{{ route('logout') }}" class="text-white btn btn-danger">Logout</a>
                 @else
+                    <a href="{{ route('register.index') }}" class="btn btn-outline-primary me-3">Daftar</a>
                     <a href="{{ route('login.index') }}" class="text-white btn btn-primary">Masuk</a>
                 @endif
             </div>
