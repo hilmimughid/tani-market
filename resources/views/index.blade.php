@@ -62,7 +62,7 @@
                                 <div class="col-6">
                                     <a href="#" class="h3">{{ $produk->nama }}</a>
                                     <h5 class="my-3">Rp.{{ $produk->harga }} per kg</h5>
-                                    <a href="{{ route('produk.show', ['produk' => $produk->id]) }}"
+                                    <a href="{{ route('produk.detail', $produk->id) }}"
                                         class="btn border border-secondary rounded px-3 text-primary">Beli</a>
 
                                 </div>
