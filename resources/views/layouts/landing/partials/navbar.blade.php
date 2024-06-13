@@ -22,7 +22,7 @@
                             class="fas fa-history"></i></a>
                 @endif
                 @if (Auth::check())
-                    <a href="{{ route('logout') }}" class="text-white btn btn-primary">Logout</a>
+                    <a href="{{ route('logout') }}" class="text-white btn btn-danger">Logout</a>
                 @else
                     <a href="{{ route('login.index') }}" class="text-white btn btn-primary">Masuk</a>
                 @endif

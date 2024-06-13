@@ -8,7 +8,10 @@
     </ul>
     <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
         <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-            <a href="{{ route('logout') }}" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+            <a href="{{ route('/') }}" class="btn btn-outline-primary mt-2 d-block">Home</a>
+            @if (Auth::check() && Auth::user()->role == 'Admin')
+                <a href="{{ route('logout') }}" class="btn btn-danger mx-3 mt-2 d-block">Logout</a>
+            @endif
         </ul>
     </div>
 </nav>
