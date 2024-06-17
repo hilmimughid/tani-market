@@ -3,7 +3,7 @@
         <div class="col-lg-4 col-md-8">
             <div class="footer-item">
                 <h4 class="text-light mb-3" id="tentangKami">Tentang Kami</h4>
-                <p style="text-align: justify;" class="mb-4">Kami adalah seorang petani lokal di Kelurahan Arjowinangun
+                <p class="mb-4 text-justify">Kami adalah seorang petani lokal di Kelurahan Arjowinangun
                     Kota Malang yang
                     membudidayakan buah dan sayur organik tanpa menggunakan bahan kimia sama sekali. Tujuan kami
                     mendirikan toko Tani Market untuk meningkatkan kesejahteraan kami dengan menjual langsung hasil
@@ -13,7 +13,7 @@
         <div class="col-lg-4 col-md-8">
             <div class="d-flex flex-column text-start footer-item">
                 <h4 class="text-light mb-3" id="lokasi">Lokasi Kami</h4>
-                <p style="text-align: justify;">Alamat: Jl. Raya Arjowinangun No.20 A, Kel. Arjowinangun, Kec.
+                <p class="text-justify">Alamat: Jl. Raya Arjowinangun No.20 A, Kel. Arjowinangun, Kec.
                     Kedungkandang, Kota Malang</p>
                 <iframe class="maps"
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15802.508379934992!2d112.638408!3d-8.0373269!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6279950d6919f%3A0x7de8a98111ff6457!2sTANI%20MARKET!5e0!3m2!1sen!2sid!4v1718199564990!5m2!1sen!2sid"

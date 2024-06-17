@@ -1,4 +1,8 @@
 /*** Spinner Start ***/
+.text-justify {
+    text-align: justify;
+}
+
 #spinner {
     opacity: 0;
     visibility: hidden;
