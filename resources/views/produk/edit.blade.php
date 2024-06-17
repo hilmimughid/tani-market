@@ -48,7 +48,7 @@
                 <div class="row">
                     <div class="col mb-3">
                         <label for="deskripsi" class="form-label">Deskripsi</label>
-                        <textarea class="form-control" rows="3" name="deskripsi">{{ $produk->deskripsi }}</textarea>
+                        <textarea class="form-control" rows="8" name="deskripsi">{{ $produk->deskripsi }}</textarea>
                     </div>
                 </div>
                 <div class="text-end">

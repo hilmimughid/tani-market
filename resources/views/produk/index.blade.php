@@ -15,13 +15,12 @@
                 <table class="table table-bordered text-center">
                     <thead>
                         <tr>
-                            <th width="50px">No</th>
+                            <th class="col-1">No</th>
                             <th>Nama</th>
                             <th>Gambar</th>
                             <th>Kategori</th>
-                            <th width="50px">Stok</th>
-                            <th>Harga</th>
-                            <th>Deskripsi</th>
+                            <th class="col-1">Stok</th>
+                            <th class="col-2">Harga</th>
                             <th class="col-1">Aksi</th>
                         </tr>
                     </thead>
@@ -30,11 +29,10 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $produk->nama }}</td>
-                                <td><img src="{{ asset('uploads/' . $produk->gambar) }}" width="100px" height="100px"></td>
+                                <td><img src="{{ asset('uploads/' . $produk->gambar) }}" width="64px" height="64px"></td>
                                 <td>{{ $produk->kategoriProduk->nama }}</td>
                                 <td>{{ $produk->stok }}</td>
-                                <td>{{ $produk->harga }}</td>
-                                <td>{{ $produk->deskripsi }}</td>
+                                <td>Rp.{{ $produk->harga }}</td>
                                 <td>
                                     <div class="d-flex ">
                                         {{-- Button  Edit --}}
