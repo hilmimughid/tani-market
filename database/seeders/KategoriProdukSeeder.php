@@ -13,7 +13,7 @@ class KategoriProdukSeeder extends Seeder
      */
     public function run(): void
     {
-        $kategori = [
+        $kategoris = [
             [
                 'nama' => 'Buah',
                 'deskripsi' => 'Aneka buah-buahan'
@@ -24,6 +24,6 @@ class KategoriProdukSeeder extends Seeder
             ]
         ];
 
-        DB::table('kategori_produk')->insert($kategori);
+        DB::table('kategori_produk')->insert($kategoris);
     }
 }
