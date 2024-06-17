@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Produk;
 use App\Models\Pesanan;
 use Illuminate\Http\Request;
 
@@ -13,18 +12,35 @@ class PesananController extends Controller
      */
     public function index(Request $request)
     {
-        $search = $request->get('search');
-        $pesanans = Pesanan::where('id', 'like', '%' . $search . '%')
-            ->paginate(5);
+        $query = Pesanan::query();
+
+        if ($request->has('search')) {
+            $search = $request->get('search');
+            $query->join('users', 'pesanan.user_id', '=', 'users.id')
+                ->join('produk', 'pesanan.produk_id', '=', 'produk.id')
+                ->where('users.nama', 'like', '%' . $search . '%')
+                ->orWhere('produk.nama', 'like', '%' . $search . '%')
+                ->orWhere('pesanan.jumlah', 'like', '%' . $search . '%')
+                ->orWhere('pesanan.total', 'like', '%' . $search . '%')
+                ->orWhere('pesanan.alamat', 'like', '%' . $search . '%')
+                ->orWhere('pesanan.status', 'like', '%' . $search . '%')
+                ->select('pesanan.*')
+                ->orderBy('pesanan.created_at', 'desc');
+        }
+
+        $pesanans = $query->paginate(5);
+
         return view('pesanan.index', compact('pesanans'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        // 
+        //
     }
 
     /**
@@ -38,9 +54,10 @@ class PesananController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Pesanan $pesanan)
+    public function show($id)
     {
-        //
+        $pesanan = Pesanan::find($id);
+        return view('pesanan.show', compact('pesanan'));
     }
 
     /**
@@ -54,9 +71,16 @@ class PesananController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Pesanan $pesanan)
+    public function update(Request $request, $id)
     {
-        //
+        try {
+            $pesanan = Pesanan::find($id);
+            $pesanan->status = $request->status;
+            $pesanan->save();
+            return redirect()->route('pesanan.index');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Terjadi kesalahan saat memperbarui pesanan: ' . $e->getMessage());
+        }
     }
 
     /**

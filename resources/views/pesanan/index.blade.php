@@ -9,16 +9,19 @@
                     <input type="text" name="search" class="form-control me-2" placeholder="Cari">
                     <button type="submit" class="btn btn-outline-primary"><i class="ti ti-search"></i></button>
                 </form>
+
             </div>
             <div class="pt-4 table-responsive text-nowrap">
                 <table class="table table-bordered text-center">
                     <thead>
                         <tr>
                             <th class="col-1">No</th>
-                            <th>Pelanggan</th>
-                            <th>Produk</th>
+                            <th class="col-1">Nama</th>
+                            <th class="col-1">Produk</th>
                             <th class="col-1">Jumlah</th>
+                            <th class="col-1">Total</th>
                             <th>Alamat</th>
+                            <th class="col-1">Status</th>
                             <th class="col-1">Aksi</th>
                         </tr>
                     </thead>
@@ -26,28 +29,28 @@
                         <tbody>
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $pesanan->user_id }}</td>
-                                <td>{{ $pesanan->produk_id }}</td>
-                                <td>{{ $pesanan->jumlah }}</td>
+                                <td>{{ $pesanan->user->nama }}</td>
+                                <td>{{ $pesanan->produk->nama }}</td>
+                                <td>{{ $pesanan->jumlah }} kg</td>
+                                <td>Rp{{ $pesanan->total }}</td>
                                 <td>{{ $pesanan->alamat }}</td>
                                 <td>
-                                    <div class="d-flex ">
-                                        {{-- Button  Edit --}}
-                                        <button class="btn btn-warning me-3" data-bs-toggle="modal"
-                                            data-bs-target="#update_pesanan_modal{{ $pesanan->id }}">
-                                            <i class="ti ti-edit"></i>
-                                        </button>
+                                    <span
+                                        class="badge
+                                        @if ($pesanan->status == 'Menunggu Konfirmasi') text-bg-primary
+                                        @elseif ($pesanan->status == 'Sedang Dikirim')
+                                            text-bg-warning
+                                        @elseif ($pesanan->status == 'Selesai')
+                                            text-bg-success
+                                        @elseif ($pesanan->status == 'Dibatalkan')
+                                            text-bg-danger @endif">
+                                        {{ $pesanan->status }}
+                                    </span>
+                                </td>
 
-                                        {{-- Button Delete --}}
-                                        <form action="{{ route('pesanan.destroy', $pesanan->id) }}" method="POST"
-                                            class="form_delete">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="button" class="btn btn-danger button_delete">
-                                                <i class="ti ti-trash"></i>
-                                            </button>
-                                        </form>
-                                    </div>
+                                <td>
+                                    <a href="{{ route('pesanan.show', $pesanan->id) }}" class="btn btn-primary"><i
+                                            class="ti ti-eye"></i></a>
                                 </td>
                             </tr>
                         </tbody>
