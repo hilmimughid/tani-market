@@ -52,23 +52,25 @@
             </div>
             <div class="row g-4">
                 @foreach ($produks as $produk)
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="p-4 rounded bg-light">
-                            <div class="row align-items-center">
-                                <div class="col-6">
-                                    <img src="{{ asset('uploads/' . $produk->gambar) }}" class="rounded-circle"
-                                        height="150px" width="150px">
-                                </div>
-                                <div class="col-6">
-                                    <a href="#" class="h3">{{ $produk->nama }}</a>
-                                    <h5 class="my-3">Rp.{{ $produk->harga }}/kg</h5>
-                                    <a href="{{ route('produk.detail', $produk->id) }}"
-                                        class="btn border border-secondary rounded px-3 text-primary">Beli</a>
+                    @if ($produk->stok > 0)
+                        <div class="col-lg-6 col-xl-4">
+                            <div class="p-4 rounded bg-light">
+                                <div class="row align-items-center">
+                                    <div class="col-6">
+                                        <img src="{{ asset('uploads/' . $produk->gambar) }}" class="rounded-circle"
+                                            height="150px" width="150px">
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="#" class="h3">{{ $produk->nama }}</a>
+                                        <h5 class="my-3">Rp.{{ $produk->harga }}/kg</h5>
+                                        <a href="{{ route('produk.detail', $produk->id) }}"
+                                            class="btn border border-secondary rounded px-3 text-primary">Beli</a>
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
                 @endforeach
             </div>
         </div>
