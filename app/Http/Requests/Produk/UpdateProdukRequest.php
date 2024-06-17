@@ -27,7 +27,7 @@ class UpdateProdukRequest extends FormRequest
             'kategori_id' => 'required',
             'stok' => 'required',
             'harga' => 'required',
-            'deskripsi' => 'max:1000',
+            'deskripsi' => 'max:2000',
         ];
     }
 }
