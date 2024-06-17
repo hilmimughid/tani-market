@@ -23,7 +23,7 @@ class BeliController extends Controller
     public function create($id)
     {
         $produk = Produk::find($id);
-        return view('pesanan.beli', compact('produk'));
+        return view('beli.create', compact('produk'));
     }
 
     /**
@@ -35,13 +35,28 @@ class BeliController extends Controller
             'jumlah' => 'required',
             'alamat' => 'required',
         ]);
+        $produk = Produk::find($request->produk_id);
+        $jumlah = $request->jumlah;
+        $total = $jumlah * $produk->harga;
 
+        if ($request->jumlah > $produk->stok) {
+            return back()->withErrors(['message' => 'Jumlah melebihi stok yang tersedia']);
+        }
+
+        // Simpan pesanan
         $pesanan = new Pesanan;
-        $pesanan->user_id = Auth::id(); // Mengambil id user yang sedang login
-        $pesanan->produk_id = $request->produk_id; // Mengambil id produk dari form
-        $pesanan->jumlah = $request->jumlah;
+        $pesanan->user_id = Auth::id();
+        $pesanan->produk_id = $request->produk_id;
+        $pesanan->jumlah = $jumlah;
+        $pesanan->total = $total; // Simpan total ke dalam database
         $pesanan->alamat = $request->alamat;
+        $pesanan->catatan = $request->catatan;
         $pesanan->save();
+
+        $produk->stok -= $request->jumlah;
+        $produk->save();
+
+        return redirect()->route('/')->with('success', 'Pesanan berhasil dibuat');
 
         return redirect()->route('/')->with('success', 'Pesanan berhasil dibuat');
     }
