@@ -33,9 +33,11 @@ Route::post('/login/auth', [LoginController::class, 'login'])->name('login.auth'
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => 'role:Customer,Admin'], function () {
-    Route::get('/beli/{id}', [BeliController::class, 'create'])->name('beli.index');
-    Route::get('/beli/{id}', [BeliController::class, 'create'])->name('beli.create');
+    Route::get('/beli/{id}/create', [BeliController::class, 'create'])->name('beli.create');
     Route::post('/beli', [BeliController::class, 'store'])->name('beli.store');
+    Route::get('/beli/histori', [BeliController::class, 'histori'])->name('beli.histori');
+    Route::get('/beli/histori/{id}', [BeliController::class, 'show'])->name('beli.show');
+    Route::put('/beli/histori/{id}', [BeliController::class, 'update'])->name('beli.update');
 });
 
 Route::group(['middleware' => ['role:Admin']], function () {

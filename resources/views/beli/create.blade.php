@@ -7,13 +7,10 @@
             <form action="{{ route('beli.store') }}" method="POST">
                 @csrf
                 <div class="row">
-                    <!-- Produk details -->
                     <div class="col-3">
                         <div class="rounded">
-                            <a href="#">
-                                <img src="{{ asset('uploads/' . $produk->gambar) }}" class="img-fluid rounded" height="200px"
-                                    width="200px" alt="Image">
-                            </a>
+                            <img src="{{ asset('uploads/' . $produk->gambar) }}" class="img-fluid rounded" height="200px"
+                                width="200px" alt="Image">
                         </div>
                         <h1 class="fw-bold mb-3">{{ $produk->nama }}</h1>
                         <h5 class="fw-bold mb-3">Rp.{{ $produk->harga }}/kg</h5>
