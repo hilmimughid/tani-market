@@ -24,6 +24,7 @@ class PesananController extends Controller
                 ->orWhere('pesanan.total', 'like', '%' . $search . '%')
                 ->orWhere('pesanan.alamat', 'like', '%' . $search . '%')
                 ->orWhere('pesanan.status', 'like', '%' . $search . '%')
+                ->orWhere('pesanan.catatan', 'like', '%' . $search . '%')
                 ->select('pesanan.*')
                 ->orderBy('pesanan.created_at', 'desc');
         }
