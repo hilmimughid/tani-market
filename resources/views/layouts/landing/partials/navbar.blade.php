@@ -14,12 +14,12 @@
                 <a href="#tentangKami" class="nav-item nav-link">Tentang Kami</a>
             </div>
             <div class="d-flex m-3 me-0">
-                @if (Auth::check() && Auth::user()->role == 'Admin')
-                    <a href="{{ route('dashboard.index') }}" class="me-3 btn btn-outline-primary">Dashboard</a>
-                @endif
-                @if (Auth::check() && Auth::user()->role == 'Customer')
-                    <a href="{{ route('dashboard.index') }}" class="me-3 btn btn-outline-primary"><i
+                @if (Auth::check())
+                    <a href="{{ route('beli.histori') }}" class="me-3 btn btn-outline-primary"><i
                             class="fas fa-history"></i></a>
+                @endif
+                @if (Auth::check() && Auth::user()->role == 'Admin')
+                    <a href="{{ route('dashboard.index') }}" class="me-3 btn btn-outline-info">Dashboard</a>
                 @endif
                 @if (Auth::check())
                     <a href="{{ route('logout') }}" class="text-white btn btn-danger">Logout</a>
