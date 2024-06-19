@@ -1,7 +1,6 @@
 @extends('layouts.landing.app')
 @section('title', 'Tani Market')
 @section('content')
-    <!-- Single Product Start -->
     <div class="container-fluid">
         <div class="container py-5">
             <div class="row g-4 mb-5">
@@ -17,7 +16,7 @@
                         </div>
                         <div class="col-lg-6">
                             <h1 class="fw-bold mb-3">{{ $produk->nama }}</h1>
-                            <h5 class="fw-bold mb-3">Rp.{{ $produk->harga }}/kg</h5>
+                            <h5 class="fw-bold mb-3">Rp {{ $produk->harga }}/kg</h5>
                             <p class="mb-3">Kategori: {{ $produk->kategoriProduk->nama }}</p>
                             <p class="mb-3">Stok: {{ $produk->stok }} kg</p>
                             <a href="{{ route('beli.create', $produk->id) }}"
