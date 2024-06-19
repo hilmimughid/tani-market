@@ -18,8 +18,8 @@
                     <div id="carouselExampleIndicators" class="carousel slide">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="{{ asset('templates/fruitables/img/hero-img-1.png') }}" height="300px"
-                                    class="d-block w-100" alt="...">
+                                <img src="{{ asset('images\slideshow.png') }}" height="300px" class="d-block w-100"
+                                    alt="...">
                             </div>
                             @foreach ($slideshows as $slideshow)
                                 <div class="carousel-item">
@@ -62,7 +62,7 @@
                                     </div>
                                     <div class="col-6">
                                         <a href="#" class="h3">{{ $produk->nama }}</a>
-                                        <h5 class="my-3">Rp.{{ $produk->harga }}/kg</h5>
+                                        <h5 class="my-3">Rp {{ $produk->harga }}/kg</h5>
                                         <a href="{{ route('produk.detail', $produk->id) }}"
                                             class="btn border border-secondary rounded px-3 text-primary">Beli</a>
 
