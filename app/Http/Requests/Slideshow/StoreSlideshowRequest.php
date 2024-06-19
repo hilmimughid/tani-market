@@ -23,7 +23,6 @@ class StoreSlideshowRequest extends FormRequest
     {
         return [
             'gambar' => 'required|mimes:jpeg,png,jpg,svg|max:2048',
-            'urutan' => 'required',
         ];
     }
 }

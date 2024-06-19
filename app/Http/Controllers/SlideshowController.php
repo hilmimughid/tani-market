@@ -36,12 +36,9 @@ class SlideshowController extends Controller
             $gambar = $request->file('gambar');
             $nama_gambar = 'gambar' . time() . '.' . $gambar->getClientOriginalExtension();
             $gambar->move(public_path('uploads'), $nama_gambar);
-
             Slideshow::create([
                 'gambar' => $nama_gambar,
-                'urutan' => $request->urutan,
             ]);
-
             return redirect()->route('slideshow.index');
         } catch (\Exception $e) {
             return back()->with('error', 'Terjadi kesalahan saat menyimpan produk: ' . $e->getMessage());
@@ -71,7 +68,6 @@ class SlideshowController extends Controller
     {
         try {
             $slideshow = Slideshow::find($id);
-
             if ($request->hasFile('gambar')) {
                 $gambar = $request->file('gambar');
                 $nama_gambar = 'gambar' . time() . '.' . $gambar->getClientOriginalExtension();
@@ -81,11 +77,7 @@ class SlideshowController extends Controller
                 }
                 $slideshow->gambar = $nama_gambar;
             }
-
-            $slideshow->urutan = $request->urutan;
-
             $slideshow->save();
-
             return redirect()->route('slideshow.index');
         } catch (\Exception $e) {
             return back()->with('error', 'Terjadi kesalahan saat memperbarui slideshow: ' . $e->getMessage());

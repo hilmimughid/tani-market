@@ -23,7 +23,6 @@ class UpdateSlideshowRequest extends FormRequest
     {
         return [
             'gambar' => 'mimes:jpeg,png,jpg,svg|max:2048',
-            'urutan' => 'required',
         ];
     }
 }

@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('slideshow', function (Blueprint $table) {
             $table->id();
             $table->string('gambar');
-            $table->integer('urutan')->default(0);
             $table->timestamps();
         });
     }
