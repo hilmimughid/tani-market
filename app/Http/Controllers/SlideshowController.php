@@ -10,26 +10,12 @@ use Illuminate\Routing\Controller;
 
 class SlideshowController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index(Request $request)
     {
         $slideshows = Slideshow::paginate(5);
         return view('slideshow.index', compact('slideshows'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreSlideshowRequest $request)
     {
         try {
@@ -41,29 +27,10 @@ class SlideshowController extends Controller
             ]);
             return redirect()->route('slideshow.index');
         } catch (\Exception $e) {
-            return back()->with('error', 'Terjadi kesalahan saat menyimpan produk: ' . $e->getMessage());
+            return back()->with('error', 'Terjadi kesalahan saat menyimpan slideshow: ' . $e->getMessage());
         }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Slideshow $slideshow)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Slideshow $slideshow)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateSlideshowRequest $request, $id)
     {
         try {
@@ -84,19 +51,13 @@ class SlideshowController extends Controller
         }
     }
 
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy($id)
     {
         try {
             $slideshow = Slideshow::find($id);
-
             if (file_exists(public_path('uploads/' . $slideshow->gambar))) {
                 unlink(public_path('uploads/' . $slideshow->gambar));
             }
-
             $slideshow->delete();
             return redirect()->route('slideshow.index');
         } catch (\Exception $e) {

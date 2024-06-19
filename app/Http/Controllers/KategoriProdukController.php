@@ -10,9 +10,6 @@ use App\Http\Requests\KategoriProduk\UpdateKategoriProdukRequest;
 
 class KategoriProdukController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index(Request $request)
     {
         $search = $request->get('search');
@@ -23,21 +20,6 @@ class KategoriProdukController extends Controller
         return view('kategori-produk.index', compact('kategori_produks'));
     }
 
-
-
-
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreKategoriProdukRequest $request)
     {
         try {
@@ -48,26 +30,6 @@ class KategoriProdukController extends Controller
         }
     }
 
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateKategoriProdukRequest $request, KategoriProduk $kategori_produk)
     {
         try {
@@ -78,9 +40,6 @@ class KategoriProdukController extends Controller
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy($id)
     {
         try {

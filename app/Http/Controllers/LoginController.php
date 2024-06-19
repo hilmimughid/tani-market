@@ -8,9 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         return view('authentication.login');
@@ -19,15 +16,12 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
-
         if (Auth::attempt($credentials)) {
             if (Auth::user()->role == 'Admin') {
                 return redirect()->route('dashboard.index');
             }
-
             return redirect()->route('/');
         }
-
         return back()->with('error', 'Email atau password salah');
     }
 

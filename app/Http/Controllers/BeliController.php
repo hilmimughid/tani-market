@@ -10,26 +10,12 @@ use Illuminate\Support\Facades\Auth;
 
 class BeliController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create($id)
     {
         $produk = Produk::find($id);
         return view('beli.create', compact('produk'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -56,7 +42,7 @@ class BeliController extends Controller
         $produk->stok -= $request->jumlah;
         $produk->save();
 
-        return redirect()->route('/')->with('success', 'Pesanan berhasil dibuat');
+        return redirect()->route('beli.histori')->with('success', 'Pembelian berhasil');
     }
 
     public function histori()
@@ -65,18 +51,12 @@ class BeliController extends Controller
         return view('beli.histori', compact('pesanans'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function show($id)
     {
         $pesanan = Pesanan::find($id);
         return view('beli.show', compact('pesanan'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, $id)
     {
         try {
@@ -85,15 +65,7 @@ class BeliController extends Controller
             $pesanan->save();
             return redirect()->route('beli.histori');
         } catch (\Exception $e) {
-            return back()->with('error', 'Terjadi kesalahan saat memperbarui pesanan: ' . $e->getMessage());
+            return back()->with('error', 'Gagal Membatalkan Pesanan: ' . $e->getMessage());
         }
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 }
