@@ -14,7 +14,6 @@
                         <tr>
                             <th class="col-1">No</th>
                             <th>Gambar</th>
-                            <th class="col-1">Urutan</th>
                             <th class="col-1">Aksi</th>
                         </tr>
                     </thead>
@@ -24,7 +23,6 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td><img src="{{ asset('uploads/' . $slideshow->gambar) }}" width="100px" height="100px">
                                 </td>
-                                <td>{{ $slideshow->urutan }}</td>
                                 <td>
                                     <div class="d-flex ">
                                         {{-- Button  Edit --}}

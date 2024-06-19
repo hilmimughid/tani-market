@@ -15,13 +15,6 @@
                             <input type="file" name="gambar" class="form-control" aria-describedby="gambar" />
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col mb-3">
-                            <label for="urutan" class="form-label">Urutan</label>
-                            <input type="number" id="urutan" name="urutan" class="form-control"
-                                placeholder="Urutan" required />
-                        </div>
-                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
@@ -55,13 +48,6 @@
                                 <label for="gambar" class="form-label">Gambar</label><br>
                                 <img src="{{ asset('uploads/' . $slideshow->gambar) }}" width="100px" height="100px">
                                 <input type="file" name="gambar" class="form-control" aria-describedby="gambar" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col mb-3">
-                                <label for="urutan" class="form-label">Urutan</label>
-                                <input type="number" id="urutan" name="urutan" class="form-control"
-                                    value="{{ $slideshow->urutan }}" required />
                             </div>
                         </div>
                     </div>
