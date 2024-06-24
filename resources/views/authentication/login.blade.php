@@ -17,12 +17,12 @@
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
                                     <input type="email" name="email" class="form-control" id="email"
-                                        placeholder="Masukkan Email" required>
+                                        placeholder="Masukkan Email" value="{{ old('email') }}" required>
                                 </div>
                                 <div class="mb-4">
                                     <label for="password" class="form-label">Password</label>
                                     <input type="password" name="password" class="form-control" id="password"
-                                        placeholder="Masukkan Password" required>
+                                        placeholder="Masukkan Password" value="{{ old('password') }}" required>
                                 </div>
                                 <button type="submit" class="btn btn-success w-100 py-8 fs-4 mb-4 rounded-2">Masuk</button>
                                 <div class="d-flex align-items-center justify-content-center">
