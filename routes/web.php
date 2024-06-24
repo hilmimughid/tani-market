@@ -30,7 +30,6 @@ Route::get('/produk/detail/{id}', [ProdukDetailController::class, 'index'])->nam
 Route::resource('/register', RegisterController::class);
 Route::get('/login', [LoginController::class, 'index'])->name('login.index');
 Route::post('/login/auth', [LoginController::class, 'login'])->name('login.auth');
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => 'role:Customer,Admin'], function () {
     Route::get('/beli/{id}/create', [BeliController::class, 'create'])->name('beli.create');
@@ -38,6 +37,7 @@ Route::group(['middleware' => 'role:Customer,Admin'], function () {
     Route::get('/beli/histori', [BeliController::class, 'histori'])->name('beli.histori');
     Route::get('/beli/histori/{id}', [BeliController::class, 'show'])->name('beli.show');
     Route::put('/beli/histori/{id}', [BeliController::class, 'update'])->name('beli.update');
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 });
 
 Route::group(['middleware' => ['role:Admin']], function () {
