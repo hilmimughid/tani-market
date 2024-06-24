@@ -16,23 +16,32 @@
                                 <h4 class="text-center">Tani Market</h4>
                                 <div class="mb-3">
                                     <label for="nama" class="form-label">Nama</label>
-                                    <input type="text" class="form-control" name="nama" value="{{ old('nama') }}"
-                                        required>
+                                    <input type="text" class="form-control" name="nama" value="{{ old('nama') }}">
+                                    @error('nama')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="no_hp" class="form-label">No. HP</label>
-                                    <input type="text" class="form-control" name="no_hp" value="{{ old('no_hp') }}"
-                                        required>
+                                    <input type="text" class="form-control" name="no_hp" value="{{ old('no_hp') }}">
+                                    @error('no_hp')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" name="email" value="{{ old('email') }}"
-                                        required>
+                                    <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                    @error('email')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="mb-4">
                                     <label for="password" class="form-label">Password</label>
                                     <input type="password" class="form-control" name="password"
-                                        value="{{ old('password') }}" required>
+                                        value="{{ old('password') }}">
+                                    @error('password')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <button type="submit"
                                     class="btn btn-success w-100 py-8 fs-4 mb-4 rounded-2">Daftar</button>
