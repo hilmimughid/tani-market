@@ -29,16 +29,11 @@
                 <div class="row">
                     <div class="col mb-4">
                         <label for="role" class="form-label">Role</label>
-                        @php
-                            $opsi_role = ['Customer', 'Admin'];
-                            $role_dipilih = $user->role;
-                            $sisa_role = array_diff($opsi_role, [$role_dipilih]);
-                        @endphp
                         <select class="form-select" name="role" required>
-                            <option selected value="{{ $role_dipilih }}">{{ $role_dipilih }}</option>
-                            @foreach ($sisa_role as $role)
-                                <option value="{{ $role }}">{{ $role }}</option>
-                            @endforeach
+                            <option value="Customer" {{ $user->role === 'Customer' ? 'selected' : '' }}>
+                                Customer</option>
+                            <option value="Admin" {{ $user->role === 'Admin' ? 'selected' : '' }}>
+                                Admin</option>
                         </select>
                     </div>
                     <div class="col mb-4">
