@@ -10,7 +10,7 @@
                     <div class="col mb-4">
                         <label for="nama" class="form-label">Nama</label>
                         <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama"
-                            required />
+                            value="{{ old('nama') }}"required />
                     </div>
                     <div class="col mb-4">
                         <label for="kategori" class="form-label">Kategori</label>
@@ -33,18 +33,18 @@
                     <div class="col mb-4">
                         <label for="stok" class="form-label">Stok</label>
                         <input type="number" id="stok" name="stok" class="form-control" placeholder="Stok"
-                            required />
+                            value="{{ old('stok') }}" required />
                     </div>
                     <div class="col mb-4">
                         <label for="harga" class="form-label">Harga</label>
                         <input type="number" id="harga" name="harga" class="form-control" placeholder="Harga"
-                            required />
+                            value="{{ old('harga') }}" required />
                     </div>
                 </div>
                 <div class="row">
                     <div class="col mb-3">
                         <label for="deskripsi" class="form-label">Deskripsi</label>
-                        <textarea class="form-control" rows="8" name="deskripsi" placeholder="Deskripsi"></textarea>
+                        <textarea class="form-control" rows="8" name="deskripsi" value="{{ old('deskripsi') }}" placeholder="Deskripsi"></textarea>
                     </div>
                 </div>
                 <div class="text-end">
