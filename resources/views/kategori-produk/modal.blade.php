@@ -13,13 +13,13 @@
                         <div class="col mb-3">
                             <label for="nama" class="form-label">Nama</label>
                             <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama"
-                                required />
+                                value="{{ old('nama') }}"required />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col mb-3">
                             <label for="deskripsi" class="form-label">Deskripsi</label>
-                            <textarea class="form-control" rows="3" name="deskripsi" placeholder="Deskripsi"></textarea>
+                            <textarea class="form-control" rows="3" name="deskripsi" value="{{ old('nama') }}" placeholder="Deskripsi"></textarea>
                         </div>
                     </div>
                 </div>
