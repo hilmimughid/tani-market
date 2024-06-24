@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="col mb-3">
                             <label for="deskripsi" class="form-label">Deskripsi</label>
-                            <textarea class="form-control" rows="3" name="deskripsi" value="{{ old('nama') }}" placeholder="Deskripsi"></textarea>
+                            <textarea class="form-control" rows="3" name="deskripsi" value="{{ old('deskripsi') }}" placeholder="Deskripsi"></textarea>
                         </div>
                     </div>
                 </div>
