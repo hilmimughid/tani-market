@@ -19,15 +19,15 @@
                     <div class="col-9">
                         <div class="form-item">
                             <label class="form-label my-3">Jumlah</label>
-                            <input type="number" class="form-control" name="jumlah">
+                            <input type="number" class="form-control" name="jumlah" value="{{ old('jumlah') }}">
                         </div>
                         <div class="form-item">
                             <label class="form-label my-3">Alamat</label>
-                            <input type="text" class="form-control" name="alamat">
+                            <input type="text" class="form-control" name="alamat" value="{{ old('alamat') }}">
                         </div>
                         <div class="form-item">
                             <label class="form-label my-3">Catatan</label>
-                            <textarea class="form-control" rows="5" name="catatan"></textarea>
+                            <textarea class="form-control" rows="5" name="catatan" value="{{ old('catatan') }}"></textarea>
                         </div>
                         <input type="hidden" name="produk_id" value="{{ $produk->id }}">
                         <div class="form-item">
