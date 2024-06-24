@@ -10,19 +10,19 @@
                     <div class="col mb-4">
                         <label for="nama" class="form-label">Nama</label>
                         <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama"
-                            required />
+                            value="{{ old('nama') }}" required />
                     </div>
                 </div>
                 <div class="row">
                     <div class="col mb-4">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" id="email" name="email" class="form-control" placeholder="Email"
-                            required />
+                            value="{{ old('email') }}" required />
                     </div>
                     <div class="col mb-4">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" id="password" name="password" class="form-control" placeholder="Password"
-                            required />
+                            value="{{ old('password') }}" required />
                     </div>
                 </div>
                 <div class="row">
@@ -37,7 +37,7 @@
                     <div class="col mb-4">
                         <label for="no_hp" class="form-label">No. HP</label>
                         <input type="text" id="no_hp" name="no_hp" class="form-control" placeholder="No. HP"
-                            required />
+                            value="{{ old('no_hp') }}" required />
                     </div>
                 </div>
                 <div class="text-end">
