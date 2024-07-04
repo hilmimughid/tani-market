@@ -12,7 +12,7 @@
                                 <img src="{{ asset('images/logo.png') }}" width="180" alt="">
                             </a>
                             <h4 class="text-center">Tani Market</h4>
-                            <form method="POST" action="{{ route('login.auth') }}">
+                            <form method="POST" action="{{ route('login') }}">
                                 @csrf
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
