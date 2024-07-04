@@ -7,8 +7,15 @@
     <title>
         @yield('title')
     </title>
+
+    {{-- Favicon --}}
     <link rel="shortcut icon" type="image" href="{{ asset('images/logo.png') }}" />
+
+    {{-- Main CSS --}}
     <link rel="stylesheet" href="{{ asset('templates/modernize/css/styles.min.css') }}" />
+
+    {{-- Custom CSS --}}
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}" />
 </head>
 
 <body>
