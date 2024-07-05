@@ -16,7 +16,8 @@
                                 @csrf
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="email" name="email" class="form-control" id="email"
+                                    <input type="email" name="email"
+                                        class="form-control @error('email') border border-danger @enderror" id="email"
                                         placeholder="Masukkan Email" value="{{ old('email') }}">
                                     @error('email')
                                         <span class="text-danger">{{ $message }}</span>
@@ -24,8 +25,9 @@
                                 </div>
                                 <div class="mb-4">
                                     <label for="password" class="form-label">Password</label>
-                                    <input type="password" name="password" class="form-control" id="password"
-                                        placeholder="Masukkan Password" value="{{ old('password') }}">
+                                    <input type="password" name="password"
+                                        class="form-control @error('password') border border-danger @enderror"
+                                        id="password" placeholder="Masukkan Password" value="{{ old('password') }}">
                                     @error('password')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
