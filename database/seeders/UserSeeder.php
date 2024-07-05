@@ -20,14 +20,14 @@ class UserSeeder extends Seeder
                 'nama' => 'Admin',
                 'email' => 'admin@admin.com',
                 'password' => Hash::make('123456789'),
-                'no_hp' => '123123123123',
+                'no_hp' => '087859198577',
                 'role' => 'Admin',
             ],
             [
                 'nama' => 'Customer',
                 'email' => 'customer@customer.com',
                 'password' => Hash::make('123456789'),
-                'no_hp' => '123123',
+                'no_hp' => '08123456790',
                 'role' => 'Customer',
             ]
         ];
