@@ -1,25 +1,28 @@
 {{-- Modal Create --}}
-<form action="{{ route('kategori-produk.store') }}" method="POST" class="form_modal">
+<form action="{{ route('kategori-produk.store') }}" method="POST" class="form_modal" id="form_kategori_produk">
     @csrf
     <div class="modal fade" id="create_kategori_produk_modal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="">Tambah Kategori Produk</h5>
+                    <h5 class="modal-title">Tambah Kategori Produk</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col mb-3">
-                            <label for="nama" class="form-label">Nama</label>
-                            <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama"
-                                value="{{ old('nama') }}"required />
+                            <label for="nama" class="form-label">Nama <span class="text-danger">*</span></label>
+                            <input type="text" id="nama" name="nama" class="form-control"
+                                placeholder="Masukkan Nama" />
+                            <span id="nama-error" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col mb-3">
                             <label for="deskripsi" class="form-label">Deskripsi</label>
-                            <textarea class="form-control" rows="3" name="deskripsi" value="{{ old('deskripsi') }}" placeholder="Deskripsi"></textarea>
+                            <textarea id="deskripsi" name="deskripsi" class="form-control" rows="5" value="{{ old('deskripsi') }}"
+                                placeholder="Masukkan Deskripsi"></textarea>
+                            <span id="deskripsi-error" class="text-danger"></span>
                         </div>
                     </div>
                 </div>
@@ -36,7 +39,8 @@
 
 {{-- Modal Update --}}
 @foreach ($kategori_produks as $kategori_produk)
-    <form action="{{ route('kategori-produk.update', $kategori_produk->id) }}" method="POST" class="form_modal">
+    <form action="{{ route('kategori-produk.update', $kategori_produk->id) }}" method="POST" class="form_modal"
+        id="form_kategori_produk">
         @csrf
         @method('PUT')
         <div class="modal fade" id="update_kategori_produk_modal{{ $kategori_produk->id }}" tabindex="-1"
@@ -54,7 +58,7 @@
                             <div class="col mb-3">
                                 <label for="nama" class="form-label">Nama</label>
                                 <input type="text" id="nama" name="nama" class="form-control"
-                                    value="{{ $kategori_produk->nama }}" required />
+                                    value="{{ $kategori_produk->nama }}" />
                             </div>
                         </div>
                         <div class="row">
