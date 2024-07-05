@@ -17,7 +17,7 @@
                                 <div class="mb-3">
                                     <label for="nama" class="form-label">Nama <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control @error('nama') border border-danger @enderror"
-                                        name="nama" value="{{ old('nama') }}">
+                                        name="nama" value="{{ old('nama') }}" placeholder="Masukkan Nama">
                                     @error('nama')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -26,7 +26,7 @@
                                     <label for="no_hp" class="form-label">No. HP <span class="text-danger">*</label>
                                     <input type="text"
                                         class="form-control @error('no_hp') border border-danger @enderror" name="no_hp"
-                                        value="{{ old('no_hp') }}">
+                                        value="{{ old('no_hp') }}" placeholder="Masukkan No. HP">
                                     @error('no_hp')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -35,7 +35,7 @@
                                     <label for="email" class="form-label">Email <span class="text-danger">*</label>
                                     <input type="email"
                                         class="form-control @error('email') border border-danger @enderror" name="email"
-                                        value="{{ old('email') }}">
+                                        value="{{ old('email') }}" placeholder="Masukkan Email">
                                     @error('email')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -44,7 +44,7 @@
                                     <label for="password" class="form-label">Password <span class="text-danger">*</label>
                                     <input type="password"
                                         class="form-control @error('password') border border-danger @enderror"
-                                        name="password" value="{{ old('password') }}">
+                                        name="password" value="{{ old('password') }}" placeholder="Masukkan Password">
                                     @error('password')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
