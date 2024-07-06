@@ -9,7 +9,7 @@
                     <input type="text" name="search" class="form-control me-2" placeholder="Cari">
                     <button type="submit" class="btn btn-outline-primary"><i class="ti ti-search"></i></button>
                 </form>
-                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create_kategori_produk_modal">Tambah
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createKategoriProdukModal">Tambah
                     Data</button>
             </div>
             <div class="pt-4 table-responsive text-nowrap">
