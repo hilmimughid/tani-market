@@ -59,4 +59,6 @@
     </div>
 
     @include('kategori-produk.modal')
+
+    <script src="{{ asset('js/custom.js') }}"></script>
 @endsection

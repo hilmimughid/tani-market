@@ -51,9 +51,6 @@
     <script src="{{ asset('templates/modernize/libs/simplebar/dist/simplebar.js') }}"></script>
     <script src="{{ asset('templates/modernize/js/dashboard.js') }}"></script>
 
-    {{-- Custom JS --}}
-    <script src="{{ asset('js/custom.js') }}"></script>
-
     @stack('scripts')
 </body>
 
