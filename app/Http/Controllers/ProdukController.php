@@ -61,10 +61,9 @@ class ProdukController extends Controller
         return view('produk.edit', compact('produk', 'kategori_produks'));
     }
 
-    public function update(UpdateProdukRequest $request, $id)
+    public function update(UpdateProdukRequest $request, Produk $produk)
     {
         try {
-            $produk = Produk::find($id);
             if ($request->hasFile('gambar')) {
                 $gambar = $request->file('gambar');
                 $nama_gambar = 'gambar' . time() . '.' . $gambar->getClientOriginalExtension();
