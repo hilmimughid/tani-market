@@ -19,8 +19,8 @@
                     <div class="col mb-4">
                         <label for="kategori_id" class="form-label">Kategori <span class="text-danger">*</label>
                         <select class="form-select @error('kategori_id') border border-danger @enderror" name="kategori_id">
+                            <option value="" selected>Pilih Kategori</option>
                             @foreach ($kategori_produks as $kategori_produk)
-                                <option value="" selected>Pilih Kategori</option>
                                 <option value="{{ $kategori_produk->id }}">{{ $kategori_produk->nama }}</option>
                             @endforeach
                         </select>
