@@ -53,7 +53,7 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col mb-3">
-                                <label for="nama" class="form-label">Nama</label>
+                                <label for="nama" class="form-label">Nama <span class="text-danger">*</span></label>
                                 <input type="text" id="updateNama" name="nama" class="form-control"
                                     value="{{ $kategori_produk->nama }}" />
                                 <span id="updateNamaError" class="text-danger"></span>
