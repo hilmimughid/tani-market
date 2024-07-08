@@ -1,18 +1,20 @@
 {{-- Modal Create --}}
-<form action="{{ route('slideshow.store') }}" method="POST" class="form_modal" enctype="multipart/form-data">
+<form action="{{ route('slideshow.store') }}" method="POST" id="createSlideshow" enctype="multipart/form-data">
     @csrf
-    <div class="modal fade" id="create_slideshow_modal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="createSlideshowModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="">Tambah Slideshow</h5>
+                    <h5 class="modal-title">Tambah Slideshow</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col mb-3">
-                            <label for="gambar" class="form-label">Gambar</label>
-                            <input type="file" name="gambar" class="form-control" aria-describedby="gambar" />
+                            <label for="gambar" class="form-label">Gambar <span class="text-danger">*</span></label>
+                            <input type="file" id="createGambar" name="gambar" class="form-control"
+                                aria-describedby="gambar" />
+                            <span id="createGambarError" class="text-danger"></span>
                         </div>
                     </div>
                 </div>
@@ -29,25 +31,28 @@
 
 {{-- Modal Update --}}
 @foreach ($slideshows as $slideshow)
-    <form action="{{ route('slideshow.update', $slideshow->id) }}" method="POST" class="form_modal"
+    <form action="{{ route('slideshow.update', $slideshow->id) }}" method="POST" id="updateSlideshow"
         enctype="multipart/form-data">
         @csrf
         @method('PUT')
-        <div class="modal fade" id="update_slideshow_modal{{ $slideshow->id }}" tabindex="-1" aria-hidden="true"
-            class="slideshow_modal">
+        <div class="modal fade" id="updateSlideshowModal{{ $slideshow->id }}" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="update_slideshow_modal{{ $slideshow->id }}">Edit
+                        <h5 class="modal-title" id="updateSlideshowModal{{ $slideshow->id }}">Edit
                             Slideshow</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="row">
                             <div class="col mb-3">
-                                <label for="gambar" class="form-label">Gambar</label><br>
-                                <img src="{{ asset('uploads/' . $slideshow->gambar) }}" width="100px" height="100px">
-                                <input type="file" name="gambar" class="form-control" aria-describedby="gambar" />
+                                <label for="gambar" class="form-label">Gambar <span
+                                        class="text-danger">*</span></label><br>
+                                <img src="{{ asset('uploads/' . $slideshow->gambar) }}" width="200px" height="150px"
+                                    class="mb-3">
+                                <input type="file" id="updateGambar" name="gambar" class="form-control"
+                                    aria-describedby="gambar" />
+                                <span id="updateGambarError" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
