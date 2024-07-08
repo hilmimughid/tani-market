@@ -38,10 +38,10 @@
 
                                         {{-- Button Delete --}}
                                         <form action="{{ route('kategori-produk.destroy', $kategori_produk->id) }}"
-                                            method="POST" class="form_delete">
+                                            method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger button_delete">
+                                            <button type="submit" class="btn btn-danger">
                                                 <i class="ti ti-trash"></i>
                                             </button>
                                         </form>

@@ -1,5 +1,5 @@
 {{-- Modal Create --}}
-<form action="{{ route('kategori-produk.store') }}" method="POST" class="form_modal" id="createKategoriProduk">
+<form action="{{ route('kategori-produk.store') }}" method="POST" id="createKategoriProduk">
     @csrf
     <div class="modal fade" id="createKategoriProdukModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
@@ -38,12 +38,11 @@
 
 {{-- Modal Update --}}
 @foreach ($kategori_produks as $kategori_produk)
-    <form action="{{ route('kategori-produk.update', $kategori_produk->id) }}" method="POST" class="form_modal"
-        id="updateKategoriProduk">
+    <form action="{{ route('kategori-produk.update', $kategori_produk->id) }}" method="POST" id="updateKategoriProduk">
         @csrf
         @method('PUT')
         <div class="modal fade" id="updateKategoriProdukModal{{ $kategori_produk->id }}" tabindex="-1"
-            aria-hidden="true" class="kategori_produk_modal">
+            aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
