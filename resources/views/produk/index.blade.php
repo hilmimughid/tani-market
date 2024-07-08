@@ -40,11 +40,10 @@
                                                 class="ti ti-edit"></i></a>
 
                                         {{-- Button Delete --}}
-                                        <form action="{{ route('produk.destroy', $produk->id) }}" method="POST"
-                                            class="form_delete">
+                                        <form action="{{ route('produk.destroy', $produk->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger button_delete">
+                                            <button type="submit" class="btn btn-danger">
                                                 <i class="ti ti-trash"></i>
                                             </button>
                                         </form>
