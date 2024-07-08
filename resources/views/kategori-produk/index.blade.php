@@ -32,7 +32,7 @@
                                     <div class="d-flex ">
                                         {{-- Button  Edit --}}
                                         <button class="btn btn-warning me-2" data-bs-toggle="modal"
-                                            data-bs-target="#update_kategori_produk_modal{{ $kategori_produk->id }}">
+                                            data-bs-target="#updateKategoriProdukModal{{ $kategori_produk->id }}">
                                             <i class="ti ti-edit"></i>
                                         </button>
 

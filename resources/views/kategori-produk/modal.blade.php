@@ -42,12 +42,12 @@
         id="updateKategoriProduk">
         @csrf
         @method('PUT')
-        <div class="modal fade" id="update_kategori_produk_modal{{ $kategori_produk->id }}" tabindex="-1"
+        <div class="modal fade" id="updateKategoriProdukModal{{ $kategori_produk->id }}" tabindex="-1"
             aria-hidden="true" class="kategori_produk_modal">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="update_kategori_produk_modal{{ $kategori_produk->id }}">Edit
+                        <h5 class="modal-title" id="updateKategoriProdukModal{{ $kategori_produk->id }}">Edit
                             Kategori Produk</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
