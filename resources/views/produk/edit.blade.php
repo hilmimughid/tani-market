@@ -9,7 +9,7 @@
                 @method('PUT')
                 <div class="row">
                     <div class="col mb-4">
-                        <label for="nama" class="form-label">Nama <span class="text-danger">*</label>
+                        <label for="nama" class="form-label">Nama <span class="text-danger">*</span></label>
                         <input type="text" name="nama"
                             class="form-control @error('nama') border border-danger @enderror"
                             value="{{ $produk->nama }}" />
@@ -18,7 +18,7 @@
                         @enderror
                     </div>
                     <div class="col mb-4">
-                        <label for="kategori" class="form-label">Kategori <span class="text-danger">*</label>
+                        <label for="kategori" class="form-label">Kategori <span class="text-danger">*</span></label>
                         <select class="form-select @error('kategori_id') border border-danger @enderror" name="kategori_id">
                             @foreach ($kategori_produks as $kategori_produk)
                                 <option value="{{ $kategori_produk->id }}"
@@ -34,7 +34,7 @@
                 </div>
                 <div class="row">
                     <div class="col mb-4">
-                        <label for="gambar" class="form-label">Gambar <span class="text-danger">*</label><br>
+                        <label for="gambar" class="form-label">Gambar <span class="text-danger">*</span></label><br>
                         <img src="{{ asset('uploads/' . $produk->gambar) }}" width="100px" height="100px">
                         <input type="file" name="gambar"
                             class="form-control @error('gambar') border border-danger @enderror" aria-describedby="gambar"
@@ -46,7 +46,7 @@
                 </div>
                 <div class="row">
                     <div class="col mb-4">
-                        <label for="stok" class="form-label">Stok <span class="text-danger">*</label>
+                        <label for="stok" class="form-label">Stok <span class="text-danger">*</span></label>
                         <input type="text" name="stok"
                             class="form-control @error('stok') border border-danger @enderror"
                             value="{{ $produk->stok }}" />
@@ -55,7 +55,7 @@
                         @enderror
                     </div>
                     <div class="col mb-4">
-                        <label for="harga" class="form-label">Harga <span class="text-danger">*</label>
+                        <label for="harga" class="form-label">Harga <span class="text-danger">*</span></label>
                         <input type="text" name="harga"
                             class="form-control @error('harga') border border-danger @enderror"
                             value="{{ $produk->harga }}" />

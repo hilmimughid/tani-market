@@ -8,7 +8,7 @@
                 @csrf
                 <div class="row">
                     <div class="col mb-4">
-                        <label for="nama" class="form-label">Nama <span class="text-danger">*</label>
+                        <label for="nama" class="form-label">Nama <span class="text-danger">*</span></label>
                         <input type="text" name="nama"
                             class="form-control @error('nama') border border-danger @enderror" placeholder="Masukkan Nama"
                             value="{{ old('nama') }}" />
@@ -17,7 +17,7 @@
                         @enderror
                     </div>
                     <div class="col mb-4">
-                        <label for="kategori_id" class="form-label">Kategori <span class="text-danger">*</label>
+                        <label for="kategori_id" class="form-label">Kategori <span class="text-danger">*</span></label>
                         <select class="form-select @error('kategori_id') border border-danger @enderror" name="kategori_id">
                             <option value="" selected>Pilih Kategori</option>
                             @foreach ($kategori_produks as $kategori_produk)
@@ -31,7 +31,7 @@
                 </div>
                 <div class="row">
                     <div class="col mb-4">
-                        <label for="gambar" class="form-label">Gambar <span class="text-danger">*</label>
+                        <label for="gambar" class="form-label">Gambar <span class="text-danger">*</span></label>
                         <input type="file" name="gambar"
                             class="form-control @error('gambar') border border-danger @enderror"
                             aria-describedby="gambar" />
@@ -42,7 +42,7 @@
                 </div>
                 <div class="row">
                     <div class="col mb-4">
-                        <label for="stok" class="form-label">Stok <span class="text-danger">*</label>
+                        <label for="stok" class="form-label">Stok <span class="text-danger">*</span></label>
                         <input type="number" name="stok"
                             class="form-control @error('stok') border border-danger @enderror" placeholder="Masukkan Stok"
                             value="{{ old('stok') }}" />
@@ -51,7 +51,7 @@
                         @enderror
                     </div>
                     <div class="col mb-4">
-                        <label for="harga" class="form-label">Harga <span class="text-danger">*</label>
+                        <label for="harga" class="form-label">Harga <span class="text-danger">*</span></label>
                         <input type="number" name="harga"
                             class="form-control @error('harga') border border-danger @enderror" placeholder="Masukkan Harga"
                             value="{{ old('harga') }}" />
