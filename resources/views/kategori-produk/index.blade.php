@@ -60,5 +60,5 @@
 
     @include('kategori-produk.modal')
 
-    <script src="{{ asset('js/custom.js') }}"></script>
+    <script src="{{ asset('js/KategoriProduk.js') }}"></script>
 @endsection
