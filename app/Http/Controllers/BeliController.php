@@ -60,13 +60,12 @@ class BeliController extends Controller
         try {
             $pesanan = Pesanan::find($id);
             $produk = $pesanan->produk;
-            // dd($produk->stok);
+
             $produk->stok += $pesanan->jumlah;
             $produk->save();
 
             $pesanan->status = $request->status;
             $pesanan->save();
-
             return redirect()->route('beli.histori');
         } catch (\Exception $e) {
             return back()->with('error', 'Gagal Membatalkan Pesanan: ' . $e->getMessage());
