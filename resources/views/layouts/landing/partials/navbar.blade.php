@@ -12,12 +12,11 @@
                 <a href="#kontak" class="nav-item nav-link">Kontak</a>
                 <a href="#lokasi" class="nav-item nav-link">Lokasi</a>
                 <a href="#tentangKami" class="nav-item nav-link">Tentang Kami</a>
+                @if (Auth::check())
+                    <a href="{{ route('beli.histori') }}" class="nav-item nav-link">Riwayat Transaksi</a>
+                @endif
             </div>
             <div class="d-flex m-3 me-0">
-                @if (Auth::check())
-                    <a href="{{ route('beli.histori') }}" class="me-3 btn btn-outline-primary"><i
-                            class="fas fa-history"></i></a>
-                @endif
                 @if (Auth::check() && Auth::user()->role == 'Admin')
                     <a href="{{ route('dashboard.index') }}" class="me-3 btn btn-outline-info">Dashboard</a>
                 @endif
