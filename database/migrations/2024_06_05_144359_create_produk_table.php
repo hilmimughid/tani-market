@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('gambar');
             $table->foreignId('kategori_id')->constrained('kategori_produk');
             $table->float('stok');
-            $table->int('harga');
+            $table->float('harga');
             $table->mediumText('deskripsi');
             $table->timestamps();
         });
