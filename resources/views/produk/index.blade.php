@@ -31,8 +31,8 @@
                                 <td>{{ $produk->nama }}</td>
                                 <td><img src="{{ asset('uploads/' . $produk->gambar) }}" width="64px" height="64px"></td>
                                 <td>{{ $produk->kategoriProduk->nama }}</td>
-                                <td>{{ $produk->stok }}</td>
-                                <td>Rp.{{ $produk->harga }}</td>
+                                <td>{{ $produk->stok }} kg</td>
+                                <td>Rp{{ $produk->harga }}/kg</td>
                                 <td>
                                     <div class="d-flex ">
                                         {{-- Button  Edit --}}

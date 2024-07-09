@@ -42,7 +42,7 @@
                 </div>
                 <div class="row">
                     <div class="col mb-4">
-                        <label for="stok" class="form-label">Stok <span class="text-danger">*</span></label>
+                        <label for="stok" class="form-label">Stok (kg) <span class="text-danger">*</span></label>
                         <input type="number" name="stok"
                             class="form-control @error('stok') border border-danger @enderror" placeholder="Masukkan Stok"
                             value="{{ old('stok') }}" />
@@ -51,7 +51,7 @@
                         @enderror
                     </div>
                     <div class="col mb-4">
-                        <label for="harga" class="form-label">Harga <span class="text-danger">*</span></label>
+                        <label for="harga" class="form-label">Harga (/kg)<span class="text-danger">*</span></label>
                         <input type="number" name="harga"
                             class="form-control @error('harga') border border-danger @enderror" placeholder="Masukkan Harga"
                             value="{{ old('harga') }}" />
