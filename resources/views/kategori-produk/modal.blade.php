@@ -62,8 +62,7 @@
                         <div class="row">
                             <div class="col mb-3">
                                 <label for="deskripsi" class="form-label">Deskripsi</label>
-                                <textarea class="form-control" id="updateDeskripsi" name="deskripsi" rows="5">
-                                    {{ $kategori_produk->deskripsi }}</textarea>
+                                <textarea class="form-control" id="updateDeskripsi" name="deskripsi" rows="5">{{ $kategori_produk->deskripsi }}</textarea>
                                 <span id="updateDeskripsiError" class="text-danger"></span>
                             </div>
                         </div>
