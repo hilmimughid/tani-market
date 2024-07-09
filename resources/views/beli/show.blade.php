@@ -10,75 +10,91 @@
                         @csrf
                         @method('PUT')
                         <div class="row my-1">
-                            <div class="col-1">
-                                <h6>Nama:</h6>
+                            <div class="col-2">
+                                <h6>Nama</h6>
                             </div>
-                            <div class="col-3">
-                                <p>{{ $pesanan->user->nama }}</p>
-                            </div>
-                        </div>
-                        <div class="row my-1">
-                            <div class="col-1">
-                                <h6>No. HP:</h6>
-                            </div>
-                            <div class="col-3">
-                                <p>{{ $pesanan->user->no_hp }}</p>
+                            <div class="col">
+                                <p>: {{ $pesanan->user->nama }}</p>
                             </div>
                         </div>
                         <div class="row my-1">
-                            <div class="col-1">
-                                <h6>Email:</h6>
+                            <div class="col-2">
+                                <h6>No. HP</h6>
                             </div>
-                            <div class="col-3">
-                                <p>{{ $pesanan->user->email }}</p>
-                            </div>
-                        </div>
-                        <div class="row my-1">
-                            <div class="col-1">
-                                <h6>Produk:</h6>
-                            </div>
-                            <div class="col-3">
-                                <p>{{ $pesanan->produk->nama }}</p>
+                            <div class="col">
+                                <p>: {{ $pesanan->user->no_hp }}</p>
                             </div>
                         </div>
                         <div class="row my-1">
-                            <div class="col-1">
-                                <h6>Jumlah:</h6>
+                            <div class="col-2">
+                                <h6>Email</h6>
                             </div>
-                            <div class="col-3">
-                                <p>{{ $pesanan->jumlah }} kg</p>
-                            </div>
-                        </div>
-                        <div class="row my-1">
-                            <div class="col-1">
-                                <h6>Total:</h6>
-                            </div>
-                            <div class="col-3">
-                                <p>Rp{{ $pesanan->total }}</p>
+                            <div class="col">
+                                <p>: {{ $pesanan->user->email }}</p>
                             </div>
                         </div>
                         <div class="row my-1">
-                            <div class="col-1">
-                                <h6>Alamat:</h6>
+                            <div class="col-2">
+                                <h6>Produk</h6>
                             </div>
-                            <div class="col-3">
-                                <p>{{ $pesanan->alamat }}</p>
+                            <div class="col">
+                                <p>: {{ $pesanan->produk->nama }}</p>
                             </div>
                         </div>
                         <div class="row my-1">
-                            <div class="col-1">
-                                <h6>Catatan:</h6>
+                            <div class="col-2">
+                                <h6>Jumlah</h6>
                             </div>
-                            <div class="col-3">
-                                <p>{{ $pesanan->catatan }}</p>
+                            <div class="col">
+                                <p>: {{ $pesanan->jumlah }} kg</p>
                             </div>
                         </div>
-                        <div class="row my-2">
-                            <div class="col-1">
-                                <h6>Status:</h6>
+                        <div class="row my-1">
+                            <div class="col-2">
+                                <h6>Total</h6>
                             </div>
-                            <div class="col-3">
-                                <p>{{ $pesanan->status }}</p>
+                            <div class="col">
+                                <p>: Rp{{ $pesanan->total }}</p>
+                            </div>
+                        </div>
+                        <div class="row my-1">
+                            <div class="col-2">
+                                <h6>Alamat</h6>
+                            </div>
+                            <div class="col">
+                                <p>: {{ $pesanan->alamat }}</p>
+                            </div>
+                        </div>
+                        <div class="row my-1">
+                            <div class="col-2">
+                                <h6>Tanggal Pembelian</h6>
+                            </div>
+                            <div class="col">
+                                <p>: {{ $pesanan->created_at->format('d-m-Y') }}</p>
+                            </div>
+                        </div>
+                        <div class="row my-1">
+                            <div class="col-2">
+                                <h6>Jam Pembelian</h6>
+                            </div>
+                            <div class="col">
+                                <p>: {{ $pesanan->created_at->format('H:i') }}</p>
+                            </div>
+                        </div>
+                        <div class="row my-1">
+                            <div class="col-2">
+                                <h6>Catatan</h6>
+                            </div>
+                            <div class="col">
+                                <p>: {{ $pesanan->catatan }}</p>
+                            </div>
+                        </div>
+                        <div class="row my-1">
+                            <div class="col-2">
+                                <h6>Status</h6>
+                            </div>
+                            <div class="col">
+                                <p>: {{ $pesanan->status }}</p>
                             </div>
                         </div>
                         <div class="text-center mt-5">

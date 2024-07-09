@@ -15,6 +15,8 @@
                                     <th class="col-1">Jumlah</th>
                                     <th class="col-1">Total</th>
                                     <th>Alamat</th>
+                                    <th class="col-1">Tanggal</th>
+                                    <th class="col-1">Jam</th>
                                     <th class="col-1">Status</th>
                                     <th class="col-1">Aksi</th>
                                 </tr>
@@ -27,6 +29,8 @@
                                         <td>{{ $pesanan->jumlah }} kg</td>
                                         <td>Rp{{ $pesanan->total }}</td>
                                         <td>{{ $pesanan->alamat }}</td>
+                                        <td>{{ $pesanan->created_at->format('d-m-Y') }}</td>
+                                        <td>{{ $pesanan->created_at->format('H:i') }}</td>
                                         <td>
                                             <span
                                                 class="badge
