@@ -38,6 +38,13 @@ class PesananController extends Controller
     {
         try {
             $pesanan = Pesanan::find($id);
+
+            if ($request->status == 'Dibatalkan') {
+                $produk = $pesanan->produk;
+                $produk->stok += $pesanan->jumlah;
+                $produk->save();
+            }
+
             $pesanan->status = $request->status;
             $pesanan->save();
             return redirect()->route('pesanan.index');
