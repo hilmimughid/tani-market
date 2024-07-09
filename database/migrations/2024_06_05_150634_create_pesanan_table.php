@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('produk_id')->constrained('produk');
-            $table->integer('jumlah');
-            $table->integer('total');
+            $table->float('jumlah');
+            $table->float('total');
             $table->string('alamat');
             $table->enum('status', ['Menunggu Konfirmasi', 'Sedang Dikirim', 'Selesai', 'Dibatalkan'])->default('Menunggu Konfirmasi');
             $table->mediumText('catatan')->nullable();

@@ -65,7 +65,6 @@
                                         <h5 class="my-3">Rp {{ $produk->harga }}/kg</h5>
                                         <a href="{{ route('produk.detail', $produk->id) }}"
                                             class="btn border border-secondary rounded px-3 text-primary">Beli</a>
-
                                     </div>
                                 </div>
                             </div>
@@ -75,9 +74,7 @@
             </div>
         </div>
     </div>
-    <!-- Bestsaler Product End -->
 
-    <!-- Featurs Section Start -->
     <div class="container-fluid featurs bg-secondary">
         <div class="container p-5">
             <div class="text-center mx-auto mb-5" style="max-width: 700px;">
@@ -131,5 +128,4 @@
             </div>
         </div>
     </div>
-    <!-- Featurs Section End -->
 @endsection

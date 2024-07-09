@@ -73,7 +73,7 @@
                                 <p>{{ $pesanan->catatan }}</p>
                             </div>
                         </div>
-                        <div class="row my-1">
+                        <div class="row my-2">
                             <div class="col-1">
                                 <h6>Status:</h6>
                             </div>
