@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreBeliRequest;
 use App\Models\Produk;
 use App\Models\Pesanan;
 use Illuminate\Http\Request;
@@ -16,33 +17,30 @@ class BeliController extends Controller
         return view('beli.create', compact('produk'));
     }
 
-    public function store(Request $request)
+    public function store(StoreBeliRequest $request)
     {
-        $request->validate([
-            'jumlah' => 'required',
-            'alamat' => 'required',
-        ]);
-        $produk = Produk::find($request->produk_id);
-        $jumlah = $request->jumlah;
-        $total = $jumlah * $produk->harga;
+        try {
+            $request->validated();
 
-        if ($request->jumlah > $produk->stok) {
-            return back()->withErrors(['message' => 'Jumlah melebihi stok yang tersedia']);
+            $produk = Produk::find($request->produk_id);
+            $jumlah = $request->jumlah;
+            $total = $jumlah * $produk->harga;
+            $produk->stok -= $request->jumlah;
+            $produk->save();
+
+            $pesanan = new Pesanan;
+            $pesanan->user_id = Auth::id();
+            $pesanan->produk_id = $request->produk_id;
+            $pesanan->jumlah = $jumlah;
+            $pesanan->total = $total;
+            $pesanan->alamat = $request->alamat;
+            $pesanan->catatan = $request->catatan;
+            $pesanan->save();
+
+            return redirect()->route('beli.histori');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Gagal Membuat Pesanan: ' . $e->getMessage());
         }
-
-        $pesanan = new Pesanan;
-        $pesanan->user_id = Auth::id();
-        $pesanan->produk_id = $request->produk_id;
-        $pesanan->jumlah = $jumlah;
-        $pesanan->total = $total;
-        $pesanan->alamat = $request->alamat;
-        $pesanan->catatan = $request->catatan;
-        $pesanan->save();
-
-        $produk->stok -= $request->jumlah;
-        $produk->save();
-
-        return redirect()->route('beli.histori')->with('success', 'Pembelian berhasil');
     }
 
     public function histori()
@@ -61,8 +59,14 @@ class BeliController extends Controller
     {
         try {
             $pesanan = Pesanan::find($id);
+            $produk = $pesanan->produk;
+            // dd($produk->stok);
+            $produk->stok += $pesanan->jumlah;
+            $produk->save();
+
             $pesanan->status = $request->status;
             $pesanan->save();
+
             return redirect()->route('beli.histori');
         } catch (\Exception $e) {
             return back()->with('error', 'Gagal Membatalkan Pesanan: ' . $e->getMessage());

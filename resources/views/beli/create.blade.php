@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid py-3">
         <div class="container py-3">
-            <h1 class="mb-5">Form Pembelian</h1>
+            <h1 class="mb-3">Form Pembelian</h1>
             <form action="{{ route('beli.store') }}" method="POST">
                 @csrf
                 <div class="row">
@@ -18,12 +18,20 @@
                     </div>
                     <div class="col-9">
                         <div class="form-item">
-                            <label class="form-label my-3">Jumlah</label>
-                            <input type="number" class="form-control" name="jumlah" value="{{ old('jumlah') }}">
+                            <label class="form-label my-3">Jumlah <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control @error('jumlah') border border-danger @enderror"
+                                name="jumlah" value="{{ old('jumlah') }}">
+                            @error('jumlah')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-item">
-                            <label class="form-label my-3">Alamat</label>
-                            <input type="text" class="form-control" name="alamat" value="{{ old('alamat') }}">
+                            <label class="form-label my-3">Alamat Tujuan <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control @error('alamat') border border-danger @enderror"
+                                name="alamat" value="{{ old('alamat') }}">
+                            @error('alamat')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-item">
                             <label class="form-label my-3">Catatan</label>
@@ -36,7 +44,7 @@
                                 disabled readonly>
                         </div>
                         <div class="text-end mt-5">
-                            <a class="btn btn-dark me-2" href="{{ route('/') }}"> Batal</a>
+                            <a class="btn btn-dark me-2" href="{{ route('produk.detail', $produk->id) }}"> Batal</a>
                             <button type="submit" class="btn btn-success">Pesan</button>
                         </div>
                     </div>
