@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Charts\PenjualanProdukChart;
 use App\Models\User;
 use App\Models\Produk;
 use App\Models\Pesanan;
-use Illuminate\Http\Request;
 use App\Models\KategoriProduk;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function index(PenjualanProdukChart $penjualanProdukChart)
     {
         $jumlahPesanan = Pesanan::count();
         $jumlahPesananBaru = Pesanan::where('status', 'Menunggu Konfirmasi')->count();
@@ -18,6 +18,11 @@ class DashboardController extends Controller
         $jumlahKategoriProduk = KategoriProduk::count();
         $jumlahProduk = Produk::count();
         $jumlahUserCustomer = User::where('role', 'Customer')->count();
-        return view('dashboard.index', compact('jumlahPesanan', 'jumlahPesananBaru', 'jumlahPesananDiproses', 'jumlahKategoriProduk', 'jumlahProduk', 'jumlahUserCustomer'));
+        return view('dashboard.index', [
+            'penjualanProdukChart' => $penjualanProdukChart->build(),
+            'jumlahPesananBaru' => $jumlahPesananBaru,
+            'jumlahPesananDiproses' => $jumlahPesananDiproses,
+            'jumlahPesanan' => $jumlahPesanan,
+        ]);
     }
 }

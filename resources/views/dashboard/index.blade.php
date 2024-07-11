@@ -2,71 +2,55 @@
 @section('title', 'Dashboard')
 @section('content')
     <div class="row">
-        <div class="col-sm-4 mb-3">
-            <div class="card text-center">
-                <div class="card-header">
-                    <h3>Pesanan Baru</h3>
-                </div>
+        <div class="col-lg-8 d-flex align-items-strech">
+            <div class="card w-100">
                 <div class="card-body">
-                    <h3>{{ $jumlahPesananBaru }}</h3>
-                    <a href="{{ route('pesanan.index') }}" class="btn btn-primary mt-3">Detail</a>
+                    <div class="d-sm-flex d-block align-items-center justify-content-between mb-9">
+                        <div class="mb-sm-0">
+                            <h5 class="card-title fw-semibold">Grafik Penjualan Produk</h5>
+                        </div>
+                    </div>
+                    <div>
+                        {!! $penjualanProdukChart->container() !!}
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-4 mb-3">
-            <div class="card text-center">
-                <div class="card-header">
-                    <h3>Pesanan Diproses</h3>
+        <div class="col-lg-4">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card overflow-hidden">
+                        <div class="card-body p-4 text-center">
+                            <h5 class="card-title mb-9 fw-semibold text-start">Pesanan Baru</h5>
+                            <h3 class="pt-3">{{ $jumlahPesananBaru }}</h3>
+                            <a href="{{ route('pesanan.index') }}" class="btn btn-primary mt-3">Detail</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h3>{{ $jumlahPesananDiproses }}</h3>
-                    <a href="{{ route('pesanan.index') }}" class="btn btn-primary mt-3">Detail</a>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body p-4 text-center">
+                            <h5 class="card-title mb-9 fw-semibold text-start">Pesanan Sedang Dikirim</h5>
+                            <h3 class="pt-3">{{ $jumlahPesananDiproses }}</h3>
+                            <a href="{{ route('pesanan.index') }}" class="btn btn-primary mt-3">Detail</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-sm-4 mb-3">
-            <div class="card text-center">
-                <div class="card-header">
-                    <h3>Total Pesanan</h3>
-                </div>
-                <div class="card-body">
-                    <h3>{{ $jumlahPesanan }}</h3>
-                    <a href="{{ route('pesanan.index') }}" class="btn btn-primary mt-3">Detail</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card text-center">
-                <div class="card-header">
-                    <h3>Kategori Produk</h3>
-                </div>
-                <div class="card-body">
-                    <h3>{{ $jumlahKategoriProduk }}</h3>
-                    <a href="{{ route('kategori-produk.index') }}" class="btn btn-primary mt-3">Detail</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card text-center">
-                <div class="card-header">
-                    <h3>Produk</h3>
-                </div>
-                <div class="card-body">
-                    <h3>{{ $jumlahProduk }}</h3>
-                    <a href="{{ route('produk.index') }}" class="btn btn-primary mt-3">Detail</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card text-center">
-                <div class="card-header">
-                    <h3>Customer</h3>
-                </div>
-                <div class="card-body">
-                    <h3>{{ $jumlahUserCustomer }}</h3>
-                    <a href="{{ route('user.index') }}" class="btn btn-primary mt-3">Detail</a>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body p-4 text-center">
+                            <h5 class="card-title mb-9 fw-semibold text-start">Total Pesanan</h5>
+                            <h3 class="pt-3">{{ $jumlahPesanan }}</h3>
+                            <a href="{{ route('pesanan.index') }}" class="btn btn-primary mt-3">Detail</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    @push('scripts')
+        <script src="{{ $penjualanProdukChart->cdn() }}"></script>
+        {{ $penjualanProdukChart->script() }}
+    @endpush
 @endsection
