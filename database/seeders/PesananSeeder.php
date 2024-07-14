@@ -16,7 +16,7 @@ class PesananSeeder extends Seeder
         $pesanans = [
             [
                 'user_id' => 2,
-                'produk_id' => 2,
+                'produk_id' => 1,
                 'jumlah' => 1,
                 'total' => 10000,
                 'alamat' => 'Jl. Raya No. 1',
@@ -34,7 +34,7 @@ class PesananSeeder extends Seeder
             ],
             [
                 'user_id' => 2,
-                'produk_id' => 2,
+                'produk_id' => 3,
                 'jumlah' => 3,
                 'total' => 24000,
                 'alamat' => 'Jl. Raya No. 3',
@@ -43,7 +43,7 @@ class PesananSeeder extends Seeder
             ],
             [
                 'user_id' => 2,
-                'produk_id' => 2,
+                'produk_id' => 4,
                 'jumlah' => 4,
                 'total' => 12000,
                 'alamat' => 'Jl. Raya No. 4',
