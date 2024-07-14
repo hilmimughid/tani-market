@@ -45,7 +45,7 @@ class BeliController extends Controller
 
     public function histori()
     {
-        $pesanans = auth()->user()->pesanan()->paginate(5);
+        $pesanans = Pesanan::where('user_id', Auth::id())->paginate(5);
         return view('beli.histori', compact('pesanans'));
     }
 
