@@ -17,18 +17,17 @@ class PenjualanProdukChart
 
     public function build(): \ArielMejiaDev\LarapexCharts\BarChart
     {
-        foreach (Produk::all() as $produk) {
-            $labels[] = $produk->nama;
-        }
-
         $data = Pesanan::select('produk_id')
             ->selectRaw('SUM(jumlah) as total_pesanan')
-            ->where(function ($query) {
-                $query->where('status', 'selesai')
-                    ->orWhere('status', 'sedang dikirim');
-            })
+            ->where('status', 'selesai')
+            ->orWhere('status', 'sedang dikirim')
             ->groupBy('produk_id')
             ->get();
+
+        $labels = $data->map(function ($item) {
+            $produk = Produk::find($item->produk_id);
+            return $produk ? $produk->nama : 'Produk Tidak Ditemukan';
+        })->toArray();
 
         return $this->chart->barChart()
             ->setXAxis($labels)
