@@ -18,28 +18,32 @@
                     </div>
                     <div class="col-9">
                         <div class="form-item">
-                            <label class="form-label my-3">Jumlah <span class="text-danger">*</span></label>
+                            <label class="form-label my-3"><span class="fw-bold">Jumlah</span> <span class="fs-6">(minimal
+                                    pembelian
+                                    1kg)</span> <span class="text-danger fw-bold">*</span></label>
                             <input type="number" class="form-control @error('jumlah') border border-danger @enderror"
-                                name="jumlah" value="{{ old('jumlah') }}">
+                                name="jumlah" placeholder="Masukkan Jumlah Produk Yang Ingin Dibeli Dalam Satuan kg"
+                                value="{{ old('jumlah') }}">
                             @error('jumlah')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-item">
-                            <label class="form-label my-3">Alamat Tujuan <span class="text-danger">*</span></label>
+                            <label class="form-label my-3 fw-bold">Alamat Tujuan <span class="text-danger">*</span></label>
                             <input type="text" class="form-control @error('alamat') border border-danger @enderror"
-                                name="alamat" value="{{ old('alamat') }}">
+                                name="alamat" placeholder="Masukkan Alamat Tujuan Pengiriman" value="{{ old('alamat') }}">
                             @error('alamat')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-item">
-                            <label class="form-label my-3">Catatan</label>
-                            <textarea class="form-control" rows="5" name="catatan" value="{{ old('catatan') }}"></textarea>
+                            <label class="form-label my-3 fw-bold">Catatan</label>
+                            <textarea class="form-control" rows="5" name="catatan" placeholder="Masukkan Catatan"
+                                value="{{ old('catatan') }}"></textarea>
                         </div>
                         <input type="hidden" name="produk_id" value="{{ $produk->id }}">
                         <div class="form-item">
-                            <label class="form-label my-3">Metode Pembayaran</label>
+                            <label class="form-label my-3 fw-bold">Metode Pembayaran</label>
                             <input class="form-control" type="text" value="COD" aria-label="Disabled input example"
                                 disabled readonly>
                         </div>
