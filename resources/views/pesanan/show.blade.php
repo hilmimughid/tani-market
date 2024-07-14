@@ -92,9 +92,20 @@
                         <h6>Status</h6>
                     </div>
                     <div class="col">
-                        @if ($pesanan->status == 'Menunggu Konfirmasi' || $pesanan->status == 'Sedang Dikirim')
+                        @if ($pesanan->status == 'Menunggu Konfirmasi')
                             <select class="form-select" name="status">
                                 @foreach (['Menunggu Konfirmasi', 'Sedang Dikirim', 'Selesai', 'Dibatalkan'] as $status)
+                                    <option value="{{ $status }}"
+                                        {{ $pesanan->status == $status ? 'selected' : '' }}>
+                                        {{ $status }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        @endif
+
+                        @if ($pesanan->status == 'Sedang Dikirim')
+                            <select class="form-select" name="status">
+                                @foreach (['Sedang Dikirim', 'Selesai', 'Dibatalkan'] as $status)
                                     <option value="{{ $status }}"
                                         {{ $pesanan->status == $status ? 'selected' : '' }}>
                                         {{ $status }}
