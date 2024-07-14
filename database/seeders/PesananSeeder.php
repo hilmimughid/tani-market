@@ -21,7 +21,9 @@ class PesananSeeder extends Seeder
                 'total' => 10000,
                 'alamat' => 'Jl. Raya No. 1',
                 'status' => 'Menunggu Konfirmasi',
-                'catatan' => 'Tidak ada catatan'
+                'catatan' => 'Tidak ada catatan',
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'user_id' => 2,
@@ -30,7 +32,9 @@ class PesananSeeder extends Seeder
                 'total' => 10000,
                 'alamat' => 'Jl. Raya No. 2',
                 'status' => 'Sedang Dikirim',
-                'catatan' => 'Tidak ada catatan'
+                'catatan' => 'Tidak ada catatan',
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'user_id' => 2,
@@ -39,7 +43,9 @@ class PesananSeeder extends Seeder
                 'total' => 24000,
                 'alamat' => 'Jl. Raya No. 3',
                 'status' => 'Selesai',
-                'catatan' => 'Tidak ada catatan'
+                'catatan' => 'Tidak ada catatan',
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'user_id' => 2,
@@ -48,7 +54,9 @@ class PesananSeeder extends Seeder
                 'total' => 12000,
                 'alamat' => 'Jl. Raya No. 4',
                 'status' => 'Dibatalkan',
-                'catatan' => 'Tidak ada catatan'
+                'catatan' => 'Tidak ada catatan',
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'user_id' => 2,
@@ -57,7 +65,9 @@ class PesananSeeder extends Seeder
                 'total' => 20000,
                 'alamat' => 'Jl. Raya No. 5',
                 'status' => 'Selesai',
-                'catatan' => 'Tidak ada catatan'
+                'catatan' => 'Tidak ada catatan',
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'user_id' => 2,
@@ -66,7 +76,9 @@ class PesananSeeder extends Seeder
                 'total' => 21000,
                 'alamat' => 'Jl. Raya No. 6',
                 'status' => 'Selesai',
-                'catatan' => 'Tidak ada catatan'
+                'catatan' => 'Tidak ada catatan',
+                'created_at' => now(),
+                'updated_at' => now()
             ]
         ];
 
