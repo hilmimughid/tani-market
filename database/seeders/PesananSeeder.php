@@ -49,6 +49,24 @@ class PesananSeeder extends Seeder
                 'alamat' => 'Jl. Raya No. 4',
                 'status' => 'Dibatalkan',
                 'catatan' => 'Tidak ada catatan'
+            ],
+            [
+                'user_id' => 2,
+                'produk_id' => 5,
+                'jumlah' => 5,
+                'total' => 20000,
+                'alamat' => 'Jl. Raya No. 5',
+                'status' => 'Selesai',
+                'catatan' => 'Tidak ada catatan'
+            ],
+            [
+                'user_id' => 2,
+                'produk_id' => 6,
+                'jumlah' => 6,
+                'total' => 21000,
+                'alamat' => 'Jl. Raya No. 6',
+                'status' => 'Selesai',
+                'catatan' => 'Tidak ada catatan'
             ]
         ];
 
